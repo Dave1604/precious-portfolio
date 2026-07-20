@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-deep: #07071A;
-  --color-surface: #0D0D2B;
+  --color-bg-deep: #F7F5FF;
+  --color-surface: #EDE9FF;
   --color-primary: #8B5CF6;
-  --color-secondary: #EC4899;
-  --color-accent: #FBBF24;
+  --color-secondary: #7C3AED;
+  --color-accent: #A78BFA;
   --font-family-sans: 'Inter', sans-serif;
 }
 
@@ -17,27 +17,38 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Respect users who prefer less motion — quiet every animation/transition */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 body {
-  background-color: #07071A;
-  color: #F1F5F9;
+  background-color: #F7F5FF;
+  color: #1A1640;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.4);
-  color: #fff;
+  background: rgba(139, 92, 246, 0.25);
+  color: #1A1640;
 }
 
 ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #07071A;
+  background: #EDE9FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8B5CF6, #EC4899);
+  background: #8B5CF6;
   border-radius: 10px;
 }
 
@@ -65,37 +76,38 @@ body {
   animation: spin-slow 12s linear infinite;
 }
 
+/* Restrained single-hue violet — no loud pink, gentle depth only */
 .gradient-text {
-  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  background: linear-gradient(120deg, #8B5CF6, #7C3AED);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-tri {
-  background: linear-gradient(135deg, #8B5CF6, #EC4899, #FBBF24);
+  background: linear-gradient(120deg, #8B5CF6, #7C3AED);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(139, 92, 246, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(139, 92, 246, 0.2);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .glow-primary {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.18);
 }
 
 .glow-hover:hover {
-  box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.22);
 }
 
 .dot-grid {
-  background-image: radial-gradient(rgba(139, 92, 246, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 

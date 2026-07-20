@@ -13,7 +13,7 @@ const links = [
 ]
 
 export default function Navbar() {
-  const { isDark, toggle, c } = useTheme()
+  const { c, isDark, toggle } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [active, setActive] = useState('Home')
@@ -54,7 +54,7 @@ export default function Navbar() {
             >
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-black text-sm"
-                style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
               >
                 TP
               </div>
@@ -87,36 +87,21 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-2">
-              {/* Theme toggle */}
               <motion.button
                 onClick={toggle}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-                style={{
-                  background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(139,92,246,0.08)',
-                  border: `1px solid ${c.border}`,
-                  color: c.text3,
-                }}
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.93 }}
-                title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                className="w-10 h-10 rounded-full flex items-center justify-center"
+                style={{ background: c.card, border: `1px solid ${c.border}`, color: c.text2 }}
+                whileHover={{ scale: 1.08, color: '#8B5CF6', borderColor: 'rgba(139,92,246,0.5)' }}
+                whileTap={{ scale: 0.92 }}
               >
-                <AnimatePresence mode="wait">
-                  {isDark ? (
-                    <motion.span key="sun" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                      <Sun size={17} />
-                    </motion.span>
-                  ) : (
-                    <motion.span key="moon" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                      <Moon size={17} />
-                    </motion.span>
-                  )}
-                </AnimatePresence>
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
               </motion.button>
 
               <motion.a
-                href="mailto:taiwo.precious@email.com"
+                href="mailto:precioustaiwo852@gmail.com"
                 className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white"
-                style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
                 whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(139,92,246,0.4)' }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -163,16 +148,16 @@ export default function Navbar() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    whileHover={{ background: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(139,92,246,0.08)', color: c.text1 }}
+                    whileHover={{ background: 'rgba(139,92,246,0.08)', color: c.text1 }}
                   >
                     {link.label}
                   </motion.button>
                 ))}
                 <div className="mt-3 pt-3" style={{ borderTop: `1px solid ${c.divider}` }}>
                   <a
-                    href="mailto:taiwo.precious@email.com"
+                    href="mailto:precioustaiwo852@gmail.com"
                     className="flex justify-center py-3 rounded-xl font-semibold text-white"
-                    style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+                    style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
                     onClick={() => setMobileOpen(false)}
                   >
                     Hire Me
