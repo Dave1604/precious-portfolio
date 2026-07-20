@@ -1,18 +1,17 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, MapPin, Phone, Send, Linkedin, Github, Twitter } from 'lucide-react'
+import { Mail, MapPin, Phone, Send, Linkedin } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'Precioustaiwo852@gmail.com', href: 'mailto:Precioustaiwo852@gmail.com' },
-  { icon: MapPin, label: 'Location', value: 'Lagos, Nigeria', href: '#' },
-  { icon: Phone, label: 'Phone', value: '+234 801 234 5678', href: 'tel:+2348012345678' },
+  { icon: Mail, label: 'Email', value: 'precioustaiwo852@gmail.com', href: 'mailto:precioustaiwo852@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '+234 808 885 9364', href: 'tel:+2348088859364' },
+  { icon: MapPin, label: 'Location', value: 'Ijebu Ode, Ogun State, Nigeria', href: '#' },
 ]
 
 const socials = [
-  { icon: Linkedin, label: 'LinkedIn', href: '#', color: '#8B5CF6' },
-  { icon: Github, label: 'GitHub', href: '#', color: '#EC4899' },
-  { icon: Twitter, label: 'Twitter', href: '#', color: '#FBBF24' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/taiwo-precious-a881682b3', color: '#8B5CF6' },
+  { icon: Mail, label: 'Email', href: 'mailto:precioustaiwo852@gmail.com', color: '#8B5CF6' },
 ]
 
 export default function Contact() {
@@ -201,14 +200,14 @@ export default function Contact() {
 
                 {error && (
                   <p className="text-xs text-center" style={{ color: '#F87171' }}>
-                    Something went wrong. Please try emailing directly at Precioustaiwo852@gmail.com
+                    Something went wrong. Please try emailing directly at precioustaiwo852@gmail.com
                   </p>
                 )}
                 <motion.button
                   type="submit"
                   disabled={submitting}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-semibold text-white"
-                  style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)', opacity: submitting ? 0.7 : 1 }}
+                  style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', opacity: submitting ? 0.7 : 1 }}
                   whileHover={submitting ? {} : { scale: 1.02, boxShadow: '0 8px 40px rgba(139,92,246,0.4)' }}
                   whileTap={submitting ? {} : { scale: 0.98 }}
                 >

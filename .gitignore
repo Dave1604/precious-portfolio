@@ -2,3 +2,10 @@ node_modules
 dist
 .DS_Store
 *.local
+.vercel
+
+# Local working/source files — not part of the deployed site
+# (the served CV lives at public/Taiwo_Precious_CV.pdf and IS committed)
+/Taiwo Precious Data Analyst Resume.docx
+/Taiwo Precious Data Analyst Resume (updated).pdf
+/Dasboard images/

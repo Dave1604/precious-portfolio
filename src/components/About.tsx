@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Lightbulb, LineChart, Users } from 'lucide-react'
+import { Database, BarChart3, HeartPulse } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
 const fadeUp = (delay = 0) => ({
@@ -10,30 +10,30 @@ const fadeUp = (delay = 0) => ({
 })
 
 const stats = [
-  { value: '5+', label: 'Years of Experience' },
-  { value: '60+', label: 'Projects Delivered' },
-  { value: '30+', label: 'Happy Clients' },
-  { value: '15+', label: 'Industries Served' },
+  { value: '6', label: 'Analytics Projects' },
+  { value: '5', label: 'Core BI Tools' },
+  { value: 'B.Sc', label: 'Public Health' },
+  { value: 'CAPM', label: 'PMI Certified' },
 ]
 
 const approaches = [
   {
-    icon: Lightbulb,
-    title: 'Analytical Thinking',
-    desc: 'I break down complex problems into actionable components, using statistical rigor to uncover patterns others miss.',
+    icon: Database,
+    title: 'Clean, Reliable Data',
+    desc: 'I get datasets decision-ready — writing SQL with joins, CTEs and window functions to clean, shape and model raw data before a single chart is drawn.',
     color: '#8B5CF6',
   },
   {
-    icon: LineChart,
-    title: 'Visual Storytelling',
-    desc: 'I transform raw numbers into clear, stunning visualizations that make data speak to any audience.',
-    color: '#EC4899',
+    icon: BarChart3,
+    title: 'Dashboards That Explain',
+    desc: 'I build interactive Power BI and Tableau dashboards with DAX measures and clear KPIs, so the story in the data is obvious at a glance.',
+    color: '#7C3AED',
   },
   {
-    icon: Users,
-    title: 'Business Impact',
-    desc: 'I bridge the gap between data and decision-making, ensuring every insight connects directly to business value.',
-    color: '#FBBF24',
+    icon: HeartPulse,
+    title: 'Grounded in Real Outcomes',
+    desc: 'A public health background keeps my work focused on real-world impact — from disease surveillance to workforce and retail decisions.',
+    color: '#A78BFA',
   },
 ]
 
@@ -85,7 +85,7 @@ export default function About() {
                 className="relative rounded-3xl overflow-hidden"
                 style={{ width: 340, height: 420, background: c.card, border: `1px solid ${c.border}`, backdropFilter: 'blur(16px)' }}
               >
-                <div className="h-2 w-full" style={{ background: 'linear-gradient(90deg, #8B5CF6, #EC4899, #FBBF24)' }} />
+                <div className="h-2 w-full" style={{ background: 'linear-gradient(90deg, #8B5CF6, #7C3AED, #A78BFA)' }} />
 
                 <div className="flex flex-col items-center justify-center pt-8 pb-6">
                   {/* Photo */}
@@ -112,7 +112,7 @@ export default function About() {
                   <p className="text-sm mt-1 font-medium" style={{ color: c.text3 }}>Data Analyst & BI Developer</p>
 
                   <div className="flex gap-2 mt-4 flex-wrap justify-center px-4">
-                    {['SQL', 'Python', 'Power BI', 'Tableau'].map((tag) => (
+                    {['SQL', 'Power BI', 'Tableau', 'Excel'].map((tag) => (
                       <span
                         key={tag}
                         className="text-xs px-2.5 py-1 rounded-full font-medium"
@@ -125,7 +125,7 @@ export default function About() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-px mx-6 mb-8 rounded-2xl overflow-hidden" style={{ background: c.border }}>
-                  {[{ v: '5+', l: 'Years' }, { v: '60+', l: 'Projects' }].map((s) => (
+                  {[{ v: '6', l: 'Projects' }, { v: '5', l: 'BI Tools' }].map((s) => (
                     <div key={s.l} className="text-center py-4" style={{ background: c.bg1 }}>
                       <div className="text-2xl font-black gradient-text">{s.v}</div>
                       <div className="text-xs font-medium mt-0.5" style={{ color: c.text3 }}>{s.l}</div>
@@ -142,7 +142,7 @@ export default function About() {
               />
               <motion.div
                 className="absolute -bottom-4 -left-4 w-14 h-14 rounded-full"
-                style={{ background: 'rgba(236,72,153,0.08)', border: '1px solid rgba(236,72,153,0.15)' }}
+                style={{ background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.15)' }}
                 animate={{ scale: [1, 1.15, 1] }}
                 transition={{ duration: 5, repeat: Infinity }}
               />
@@ -162,19 +162,19 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: c.text3 }}>
               <p>
-                I'm Taiwo Precious — a data analyst with over 5 years of experience helping organizations
-                unlock the power of their data. My work sits at the intersection of statistics, technology,
-                and business strategy.
+                I'm Taiwo Precious — a data analyst with a public health foundation, turning raw
+                employee, retail, customer, and healthcare data into dashboards and insights that
+                support real decisions.
               </p>
               <p>
-                From building interactive dashboards that C-suite executives rely on daily, to developing
-                predictive models that forecast revenue with over 90% accuracy, I bring a blend of
-                technical rigor and creative thinking to every project.
+                I work across the full analytics lifecycle: gathering requirements, cleaning and
+                modeling data with SQL and Power Query, building interactive Power BI and Tableau
+                dashboards, and presenting findings clearly to non-technical stakeholders.
               </p>
               <p>
-                When I'm not deep in datasets, I'm sharing knowledge through mentoring aspiring analysts
-                and writing about data trends. I believe great data work is collaborative, ethical, and
-                always in service of real human outcomes.
+                My background in public health drew me toward disease-surveillance and healthcare
+                analytics — and I share what I know by tutoring aspiring analysts through data
+                cleaning, SQL, and dashboard design.
               </p>
             </div>
 

@@ -36,9 +36,9 @@ function useTypewriter(words: string[], speed = 80, pause = 2000) {
 }
 
 const floatingCards = [
-  { icon: TrendingUp, label: 'Revenue Impact', value: '↑ 42%', color: '#8B5CF6', x: '72%', y: '12%' },
-  { icon: Target, label: 'Model Accuracy', value: '95%', color: '#EC4899', x: '78%', y: '68%' },
-  { icon: BarChart2, label: 'Dashboards Built', value: '50+', color: '#FBBF24', x: '2%', y: '70%' },
+  { icon: TrendingUp, label: 'Malaria records', value: '666M', color: '#8B5CF6', x: '72%', y: '12%' },
+  { icon: Target, label: 'Attrition insight', value: '14.69%', color: '#8B5CF6', x: '78%', y: '68%' },
+  { icon: BarChart2, label: 'Analytics projects', value: '6', color: '#8B5CF6', x: '2%', y: '70%' },
 ]
 
 export default function Hero() {
@@ -135,6 +135,32 @@ export default function Hero() {
 
           {/* Left text */}
           <motion.div variants={stagger.container} initial="initial" animate="animate">
+            {/* Mobile-only profile avatar (desktop uses the large visual on the right) */}
+            <motion.div variants={stagger.item} className="lg:hidden flex justify-center mb-8">
+              <div className="relative" style={{ width: 160, height: 160 }}>
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)', transform: 'scale(1.3)' }}
+                />
+                <motion.div
+                  className="absolute inset-0 rounded-full"
+                  style={{ padding: 3, background: 'conic-gradient(from 0deg, #8B5CF6, #7C3AED, #A78BFA, #8B5CF6)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                >
+                  <div className="w-full h-full rounded-full" style={{ backgroundColor: c.bg1 }} />
+                </motion.div>
+                <div className="absolute rounded-full overflow-hidden" style={{ inset: 8 }}>
+                  <img
+                    src="/profile.jpg"
+                    alt="Taiwo Precious"
+                    className="w-full h-full"
+                    style={{ objectFit: 'cover', objectPosition: '50% 15%' }}
+                  />
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div variants={stagger.item}>
               <span
                 className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full"
@@ -144,7 +170,7 @@ export default function Hero() {
                   color: '#8B5CF6',
                 }}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 inline-block" style={{ animation: 'pulse 2s infinite' }} />
+                <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#8B5CF6', animation: 'pulse 2s infinite' }} />
                 Available for opportunities
               </span>
             </motion.div>
@@ -179,7 +205,7 @@ export default function Hero() {
               <motion.a
                 href="#projects"
                 className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm"
-                style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
                 whileHover={{ scale: 1.04, boxShadow: '0 8px 40px rgba(139,92,246,0.4)' }}
                 whileTap={{ scale: 0.97 }}
                 onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) }}
@@ -203,9 +229,9 @@ export default function Hero() {
             {/* Stats */}
             <motion.div variants={stagger.item} className="mt-12 flex gap-8">
               {[
-                { value: '5+', label: 'Years Exp.' },
-                { value: '60+', label: 'Projects' },
-                { value: '30+', label: 'Clients' },
+                { value: '6', label: 'Projects' },
+                { value: '4', label: 'BI Tools' },
+                { value: 'B.Sc', label: 'Public Health' },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-3xl font-black gradient-text">{s.value}</div>
@@ -269,7 +295,7 @@ export default function Hero() {
                 className="absolute inset-0 rounded-full"
                 style={{
                   padding: 3,
-                  background: 'conic-gradient(from 0deg, #8B5CF6, #EC4899, #FBBF24, #8B5CF6)',
+                  background: 'conic-gradient(from 0deg, #8B5CF6, #7C3AED, #A78BFA, #8B5CF6)',
                 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
@@ -294,7 +320,7 @@ export default function Hero() {
               <motion.div
                 className="absolute w-5 h-5 rounded-full"
                 style={{
-                  background: 'linear-gradient(135deg, #8B5CF6, #EC4899)',
+                  background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
                   top: '50%',
                   left: '50%',
                   marginTop: -152,
@@ -315,7 +341,7 @@ export default function Hero() {
                 style={{
                   width: 6 + (i % 3) * 4,
                   height: 6 + (i % 3) * 4,
-                  background: i % 2 === 0 ? '#8B5CF6' : '#EC4899',
+                  background: i % 2 === 0 ? '#8B5CF6' : '#7C3AED',
                   opacity: 0.35,
                   left: `${10 + i * 14}%`,
                   top: `${15 + (i % 3) * 25}%`,

@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -11,18 +12,20 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      <MotionConfig reducedMotion="user">
+        <div className="min-h-screen">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </MotionConfig>
     </ThemeProvider>
   )
 }

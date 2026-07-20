@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taiwo-precious-portfolio-lac.vercel.app/sitemap.xml

@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
-import { Linkedin, Github, Twitter, Mail, Heart } from 'lucide-react'
+import { Linkedin, Mail, Phone } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
 const socials = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:taiwo.precious@email.com', label: 'Email' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/taiwo-precious-a881682b3', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:precioustaiwo852@gmail.com', label: 'Email' },
+  { icon: Phone, href: 'tel:+2348088859364', label: 'Phone' },
 ]
 
 const navLinks = [
@@ -34,13 +33,13 @@ export default function Footer() {
           <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.02 }}>
             <div
               className="w-12 h-12 rounded-2xl flex items-center justify-center text-white font-black text-base"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)', boxShadow: '0 0 30px rgba(139,92,246,0.25)' }}
+              style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', boxShadow: '0 0 30px rgba(139,92,246,0.25)' }}
             >
               TP
             </div>
             <div>
               <div className="font-black text-xl leading-none" style={{ color: c.text1 }}>Taiwo Precious</div>
-              <div className="text-xs mt-0.5 font-medium" style={{ color: c.text4 }}>Data Analyst & Insights Strategist</div>
+              <div className="text-xs mt-0.5 font-medium" style={{ color: c.text4 }}>Data Analyst · Business Intelligence</div>
             </div>
           </motion.div>
 
@@ -49,8 +48,10 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium transition-colors hover:text-violet-500"
+                className="text-sm font-medium transition-colors"
                 style={{ color: c.text4 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#8B5CF6')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = c.text4)}
                 onClick={(e) => { e.preventDefault(); document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' }) }}
               >
                 {link.label}
@@ -79,8 +80,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ color: c.text4 }}>
           <span>© {new Date().getFullYear()} Taiwo Precious. All rights reserved.</span>
           <span className="flex items-center gap-1.5">
-            Built with <Heart size={12} className="text-pink-500" fill="currentColor" /> and{' '}
-            <span className="font-semibold gradient-text">lots of data</span>
+            Designed & built by <span className="font-semibold gradient-text">Taiwo Precious</span>
           </span>
         </div>
       </div>
